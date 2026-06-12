@@ -19,6 +19,7 @@ export class Patcher {
 		}
 
 		const plugin = this.plugin;
+		// eslint-disable-next-line @typescript-eslint/unbound-method -- saved for prototype restore
 		const originalGetSortedFolderItems = explorerProto.getSortedFolderItems;
 
 		explorerProto.getSortedFolderItems = function (
