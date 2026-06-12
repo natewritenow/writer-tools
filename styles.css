@@ -1,8 +1,62 @@
-/*
+[data-type='file-explorer'] .tree-item[data-drop-sibling] {
+	position: relative;
+}
 
-This CSS file will be included with your plugin, and
-available in the app when your plugin is enabled.
+[data-type='file-explorer'] .tree-item[data-insert-pos='before']::before,
+[data-type='file-explorer'] .tree-item[data-insert-pos='after']::after {
+	content: '';
+	position: absolute;
+	display: block;
+	translate: 12px -1px;
+	height: 1px;
+	width: 90%;
+	left: 0;
+	background: var(--color-accent);
+}
 
-If your plugin does not need CSS, delete this file.
+[data-type='file-explorer'] .nav-folder[data-insert-pos='after']:not(.is-collapsed)::after {
+	transform: translateY(2px);
+}
 
-*/
+[data-type='file-explorer'] .nav-folder-children .tree-item[data-insert-pos='after']:nth-last-child(1 of .tree-item)::after {
+	transform: translateY(-2px);
+}
+
+[data-type='file-explorer'] > .nav-files-container > div.is-being-dragged-over,
+[data-type='file-explorer'] .nav-folder.is-being-dragged-over {
+	background-color: revert;
+}
+
+[data-type='file-explorer'] > .nav-files-container > div.is-being-dragged-over > .nav-folder-title,
+[data-type='file-explorer'] .nav-folder.is-being-dragged-over > .nav-folder-title {
+	color: var(--nav-item-color);
+}
+
+[data-type='file-explorer'] > .nav-files-container > div[data-drop-folder],
+[data-type='file-explorer'] .nav-folder[data-drop-folder] {
+	background-color: hsla(var(--interactive-accent-hsl), 0.1);
+	border-radius: var(--radius-s);
+}
+
+[data-type='file-explorer'] > .nav-files-container > div[data-drop-folder] > .nav-folder-title,
+[data-type='file-explorer'] .nav-folder[data-drop-folder] > .nav-folder-title {
+	color: var(--nav-item-color-highlighted);
+}
+
+body:has([data-dragging]) .drag-ghost {
+	display: none;
+}
+
+body.is-mobile [data-type='file-explorer'] .tree-item-self::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 36px;
+	height: 100%;
+	cursor: grab;
+}
+
+body.is-mobile [data-type='file-explorer'] .tree-item[data-dragging] .tree-item-self::after {
+	cursor: grabbing;
+}

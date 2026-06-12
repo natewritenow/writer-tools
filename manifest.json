@@ -1,11 +1,9 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "writer-tools",
+	"name": "Writer Tools",
 	"version": "1.0.0",
-	"minAppVersion": "1.0.0",
-	"description": "Demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"minAppVersion": "1.5.7",
+	"description": "Manually reorder folders and files in the file explorer via drag-and-drop or context menu commands. Syncs order across devices with Obsidian Sync.",
+	"author": "",
 	"isDesktopOnly": false
 }
